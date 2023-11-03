@@ -17,6 +17,7 @@ of using the cached function.
 from typing import Callable
 import timeit
 
+
 class HashableDict(dict):
     """Hashable dictionary class"""
 
@@ -37,7 +38,6 @@ class ArgCache:
         self.func = func
         self.cache = dict()
 
-
     def keyer(self, *args: tuple, **kwargs: dict):
         key = (
             "|"
@@ -57,6 +57,7 @@ class ArgCache:
             self.cache[key] = output
 
         return output
+
 
 class ArgCacheObjKey(ArgCache):
     def keyer(self, *args: tuple, **kwargs: dict):
